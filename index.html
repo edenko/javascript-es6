@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"
+  ></script>
+    
+  <div class="alert-box" id="alert-box">
+    <span id="txt">Alert 박스</span>
+    <button class="alert-close" id="close">X</button>
+  </div>
+  <button onclick="alertOpen('아이디', 'block')">버튼</button>
+  <button onclick="alertOpen('비밀번호', 'block')">버튼2</button>
+  
+  <script>
+    function alertOpen(param, param2) {
+      document.getElementById('txt').innerHTML = param + '를 입력안하셨어요';
+      document.getElementById('alert-box').style.display = param2;
+    }
+    
+    document.getElementById('close').addEventListener('click', function() {
+      document.getElementById('alert-box').style.display = 'none';
+    })
+  </script>
+  
+  
+</body>
+</html>

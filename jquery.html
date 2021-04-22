@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <p class="greeting">안녕하세요</p>
+  <p class="greeting">안녕하세요</p>
+  <p class="greeting">안녕하세요</p>
+  <button class="btn">버튼</button>
+  <script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"
+  ></script>
+  
+  <script>
+  
+    $('.greeting').html('안녕');
+    $('.greeting').eq(0).html('안녕!!!');
+    
+//    document.getElementsByClassName('btn')[0].addEventListener('click', function() {
+//      document.getElementsByClassName('greeting')[0].style.display = 'none';
+//    });
+//    
+    $('.btn').on('click', function() {
+//      $('.greeting').eq(0).hide();
+      $('.greeting').slideToggle(100);
+    });
+    
+  </script>
+</body>
+</html>
