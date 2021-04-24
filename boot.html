@@ -64,6 +64,29 @@
       <a class="btn btn-danger btn-lg" href="#" role="button" id="show-manu">Menu</a>
     </div>
     
+<!--    Carousel-->
+    <h4 class="my-4 text-center">Showcase</h4>
+    
+    <div style="overflow: hidden; position: relative">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="images/product1.jpg">
+        </div>
+        <div class="slide-box">
+          <img src="images/product2.jpg">
+        </div>
+        <div class="slide-box">
+          <img src="images/product3.jpg">
+        </div>
+      </div>
+      <button class="slide-prev">Prev</button>
+      <button class="slide-next">Next</button>
+    </div>
+    
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -127,6 +150,30 @@
 //        $('.left-menu').css('transform', 'translateX(0px)');
         $('.left-menu').addClass('slide-down');
       });
+      
+      // carousel
+      var presentImg = 1;
+      $('.slide-next').on('click', function() {
+        $('.slide-container').css('transform', 'translateX(-'+presentImg+'00vw)');
+        if(presentImg < 2) {
+          presentImg++;
+        }
+      });
+      $('.slide-prev').on('click', function() {
+        $('.slide-container').css('transform', 'translateX(-'+(presentImg - 1)+'00vw)');
+        if(presentImg > 1) {
+          presentImg--;
+        }
+      });
+//      $('.slide-1').on('click', function() {
+//        $('.slide-container').css('transform', 'translateX(0vw)');
+//      });
+//      $('.slide-2').on('click', function() {
+//        $('.slide-container').css('transform', 'translateX(-100vw)');
+//      });
+//      $('.slide-3').on('click', function() {
+//        $('.slide-container').css('transform', 'translateX(-200vw)');
+//      });
     </script>
   </body>
 </html>

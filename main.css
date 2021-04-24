@@ -81,3 +81,29 @@
 .slide-down {
   transform: translateX(0px);
 }
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+
+.slide-container {
+  width: 300vw;
+  transition: transform 0.5s;
+}
+
+.slide-box img {
+   width: 100%;
+}
+
+.slide-next {
+  position: absolute;
+  top: 45%;
+  right: 0;
+}
+
+.slide-prev {
+  position: absolute;
+  top: 45%;
+  left: 0;
+}
