@@ -59,3 +59,25 @@
   background: none;
   border: none;
 }
+
+#email-alert, #password-alert {
+  padding-left: 5px;
+  font-size: 13px;
+  display: none;
+  color: crimson;
+}
+
+.left-menu {
+  width: 150px;
+  height: 100%;
+  background-color: black;
+  color: #ccc;
+  position: fixed;
+/*  margin-left: -150px;*/
+  transition: all 0.5s;
+  transform: translateX(-150px);
+}
+
+.slide-down {
+  transform: translateX(0px);
+}
