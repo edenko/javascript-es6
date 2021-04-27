@@ -46,6 +46,11 @@
   justify-content: space-between;
   padding: 15px;
   align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  color: white;
 }
 
 .nav-sub {
@@ -106,4 +111,9 @@
   position: absolute;
   top: 45%;
   left: 0;
+}
+
+.nav-black {
+  background: white;
+  color: black;
 }

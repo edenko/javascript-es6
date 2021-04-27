@@ -100,6 +100,14 @@
     -->
     
     <script>
+      // Nav
+      $(window).on('scroll', function() {
+        if($(window).scrollTop() > 100) {
+  //        $('.nav-menu').css('background', 'white');
+          $('.nav-menu').addClass('nav-black');
+        }
+      });
+      
       $('#btn').on('click', function() {
         $('#email-alert').hide();
         $('#password-alert').hide();
