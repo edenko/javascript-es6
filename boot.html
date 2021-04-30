@@ -64,6 +64,7 @@
       <a class="btn btn-danger btn-lg" href="#" role="button" id="show-manu">Menu</a>
     </div>
     
+    
 <!--    Carousel-->
     <h4 class="my-4 text-center">Showcase</h4>
     
@@ -87,6 +88,26 @@
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
     
+    
+<!--    Tab-->
+    <div class="container mt-5 mb-5">
+      <ul class="list">
+        <li class="tab-button">Products</li>
+        <li class="tab-button active">Information</li>
+        <li class="tab-button">Shipping</li>
+      </ul>
+
+      <div class="tab-content">
+        <p>상품설명입니다. Product</p>
+      </div>
+      <div class="tab-content show">
+        <p>상품정보입니다. Info</p>
+      </div>
+      <div class="tab-content">
+        <p>배송정보입니다. Shipping</p>
+      </div>
+    </div>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -99,12 +120,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     -->
     
+
     <script>
       // Nav
       $(window).on('scroll', function() {
         if($(window).scrollTop() > 100) {
   //        $('.nav-menu').css('background', 'white');
           $('.nav-menu').addClass('nav-black');
+        }else {
+  //        $('.nav-menu').css('background', 'white');
+          $('.nav-menu').removeClass('nav-black');
         }
       });
       
@@ -112,6 +137,11 @@
         $('#email-alert').hide();
         $('#password-alert').hide();
         $('.black-background').fadeIn(200);   
+      });
+      $('.black-background').on('click', function(e) {
+        if(e.target == this) {
+          $('.black-background').hide();
+        }
       });
       
       $('form').on('submit', function(e) {
@@ -183,5 +213,6 @@
 //        $('.slide-container').css('transform', 'translateX(-200vw)');
 //      });
     </script>
+    <script src="tab.js"></script>
   </body>
 </html>
