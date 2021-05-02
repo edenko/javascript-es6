@@ -108,6 +108,28 @@
       </div>
     </div>
     
+    
+    <h4 id="item-name">상품제목</h4>
+    <p id="item-content">상품내용</p>
+    <div style="margin-bottom: 500px"></div>
+    <script>
+    
+      var array = [ 'BMW', 520 ];
+      console.log(array[1]);
+      
+      var object = { barnd : 'BMW', model : 520 };
+      console.log(object.barnd);
+      
+      var combine = [ { brand : 'BMW' }, { model : 520 } ];
+      console.log(combine[0].brand);
+      
+      document.getElementById('item-name').innerHTML = array[0];
+      document.getElementById('item-content').innerHTML = object.model;
+//      $('#item-name').html(array[0]);
+      document.getElementById('item-name').innerHTML = combine[0].brand;
+    
+    </script>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
