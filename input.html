@@ -23,14 +23,21 @@
         <select class="form-control" id="option1">
           <option>모자</option>
           <option>셔츠</option>
+          <option>바지</option>
         </select>
         
-        <div class="size-select show">
+        <div class="size-select">
           <p class="mt-4">사이즈선택</p>
           <select class="form-control" id="option2">
             <option>95</option>
             <option>100</option>
             <option>105</option>
+          </select>
+        </div>
+        
+         <div class="size-select2 show">
+          <p class="mt-4">사이즈선택</p>
+          <select class="form-control" id="option3">
           </select>
         </div>
 
@@ -40,9 +47,16 @@
     <script>
       $('#option1').on('change', function() {
         if($('#option1').val() == '셔츠') {
-           $('.size-select').show();
+          $('.size-select').show();
+          $('.size-select2').hide();
+        }else if($('#option1').val() == '바지') {
+          var temp = '<option>S</option><option>M</option><option>L</option>';
+          $('#option3').append(temp);
+          $('.size-select').hide();
+          $('.size-select2').show();
         }else {
           $('.size-select').hide();
+          $('.size-select2').hide();
         }
       });
     </script>
