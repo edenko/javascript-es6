@@ -35,7 +35,7 @@
           </select>
         </div>
         
-         <div class="size-select2 show">
+        <div class="size-select2 show">
           <p class="mt-4">사이즈선택</p>
           <select class="form-control" id="option3">
           </select>
@@ -50,8 +50,15 @@
           $('.size-select').show();
           $('.size-select2').hide();
         }else if($('#option1').val() == '바지') {
-          var temp = '<option>S</option><option>M</option><option>L</option>';
-          $('#option3').append(temp);
+          var size = [28, 30, 32, 34, 36];
+          // for(var i = 0; i < size.length; i++) {
+          //   var temp = '<option>'+ size[i] +'</option>';
+          //   $('#option3').append(temp);
+          // }
+          size.forEach(function(i) {
+            var temp = `<option>${i}</option>`;
+            $('#option3').append(temp);
+          }) 
           $('.size-select').hide();
           $('.size-select2').show();
         }else {
