@@ -178,3 +178,23 @@ ul.list::after {
 .size-select2 {
   display: none;
 }
+
+.grey {
+  /* background-color: gray; */
+  background-color: black;
+  height: 2000px;
+  margin-top: 600px;
+  margin-bottom: 1600px;
+}
+
+.sticky {
+  position: sticky;
+  top: 100px;
+  float: right;
+}
+
+.left-txt {
+  float: left;
+  color: white;
+  padding: 20px;
+}
