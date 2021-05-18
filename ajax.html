@@ -44,6 +44,22 @@
             }).always(function() {
                 // 언제나 항상 실행
             });
+
+            $('#btn').on('click', function() {
+                $.ajax({
+                    url : 'https://codingapple1.github.io/data.json',
+                    type : 'GET'
+                }).done(function(data) {
+                    console.log(data);
+                    document.getElementById("img").src = data.img;
+                    document.getElementById("title").innerText = data.brand + ' ' + data.model;
+                    document.getElementById("price").innerText = data.price;
+                }).fail(function() {
+                    // 실패했을 때 실행
+                }).always(function() {
+                    // 언제나 항상 실행
+                });            
+            })
         </script>
 
         <!-- Optional JavaScript; choose one of the two! -->
