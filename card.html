@@ -33,6 +33,11 @@
         var y2 = -1/267 * height + 1067/267;
         $('.card-box').eq(0).css('opacity', y);
         $('.card-box').eq(1).css('opacity', y2);
+        
+        var z = -1/2670 * height + 311/264;
+        var z2 = -1/2670 * height + 347/267;
+        $('.card-box').eq(0).css('transform', `scale( ${z} )`);
+        $('.card-box').eq(1).css('transform', `scale( ${z2} )`);
       });
     </script>
 </body>
