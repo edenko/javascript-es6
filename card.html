@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+    ></script>
+</head>
+  <body>
+    <div class="card-background">
+      <div class="card-box">
+        <img src="/images/card1.png" alt="">
+      </div>
+      <div class="card-box">
+        <img src="/images/card2.png" alt="">
+      </div>
+      <div class="card-box">
+        <img src="/images/card3.png" alt="">
+      </div>
+    </div>
+
+    <script>
+      $(window).scroll(function() {
+        var height = $(window).scrollTop();
+        console.log(height); // 470-734, 800-1067
+        // 1 = a * 470 + b
+        // 0 = a * 734 + b
+        var y = -1/264 * height + 367/132;
+        var y2 = -1/267 * height + 1067/267;
+        $('.card-box').eq(0).css('opacity', y);
+        $('.card-box').eq(1).css('opacity', y2);
+      });
+    </script>
+</body>
+</html>

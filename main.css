@@ -140,11 +140,13 @@ ul.list {
 	padding: 0;
 	border-bottom: 1px solid #ccc;
 }
+
 ul.list::after {
   content: '';
   display: block;
   clear: both;
 }
+
 .tab-button {
   display: block;
   padding: 10px 20px 10px 20px;
@@ -155,6 +157,7 @@ ul.list::after {
   text-decoration: none;
   cursor: pointer;
 }
+
 .active {
   border-top: 2px solid orange;
   border-right: 1px solid #ccc;
@@ -163,10 +166,12 @@ ul.list::after {
   color: black;
   margin-top: -2px;
 }
+
 .tab-content {
   display: none;
   padding: 10px;
 }
+
 .show {
   display: block;
 }
@@ -198,3 +203,25 @@ ul.list::after {
   color: white;
   padding: 20px;
 }
+
+/* card */
+.card-background {
+  height: 3000px;
+  margin-top: 800px;
+  margin-bottom: 1600px;
+}
+
+.card-box img {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+}
+
+.card-box {
+  position: sticky;
+  top: 400px;
+  margin-top: 50px;
+  transition: all 0.2s;
+}
+
+
