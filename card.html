@@ -26,18 +26,13 @@
     <script>
       $(window).scroll(function() {
         var height = $(window).scrollTop();
-        console.log(height); // 470-734, 800-1067
-        // 1 = a * 470 + b
-        // 0 = a * 734 + b
-        var y = -1/264 * height + 367/132;
-        var y2 = -1/267 * height + 1067/267;
+        console.log(height); // 167-435, 500-772
+        // 1 = a * 167 + b
+        // 0 = a * 435 + b
+        var y = -1/268 * height + 435/268;
+        var y2 = -1/272 * height + 193/68;
         $('.card-box').eq(0).css('opacity', y);
         $('.card-box').eq(1).css('opacity', y2);
-        
-        var z = -1/2670 * height + 311/264;
-        var z2 = -1/2670 * height + 347/267;
-        $('.card-box').eq(0).css('transform', `scale( ${z} )`);
-        $('.card-box').eq(1).css('transform', `scale( ${z2} )`);
       });
     </script>
 </body>
