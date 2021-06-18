@@ -104,6 +104,15 @@
   transition: transform 0.5s;
 }
 
+.slide-container2 {
+  width: 300vw;
+  /* transition: transform 0.5s; */
+}
+
+.transforming {
+  transition : transform 0.5s;
+}
+
 .slide-box img {
    width: 100%;
 }
