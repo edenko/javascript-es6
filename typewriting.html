@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Typewriting</title>
+    <link rel="stylesheet" href="main.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+    ></script>
+</head>
+  <body>
+    <div>
+      <button>버튼</button>
+      <h1>abcde</h1>
+    </div>
+
+    <script>
+      var origin_h1 = document.querySelector('h1');
+      var origin = document.querySelector('h1').innerHTML;
+
+      $('button').click(function() {
+        origin_h1.innerHTML = '';
+
+        setTimeout(function() {
+          origin_h1.innerHTML += 'a';
+        }, 500);
+        setTimeout(function() {
+          origin_h1.innerHTML += 'b';
+        }, 1000);
+        setTimeout(function() {
+          origin_h1.innerHTML += 'c';
+        }, 1500);
+      });
+    </script>
+</body>
+</html>
