@@ -23,15 +23,20 @@
       $('button').click(function() {
         origin_h1.innerHTML = '';
 
-        setTimeout(function() {
-          origin_h1.innerHTML += 'a';
-        }, 500);
-        setTimeout(function() {
-          origin_h1.innerHTML += 'b';
-        }, 1000);
-        setTimeout(function() {
-          origin_h1.innerHTML += 'c';
-        }, 1500);
+        // setTimeout(function() {
+        //   origin_h1.innerHTML += origin[0];
+        // }, 500);
+        // setTimeout(function() {
+        //   origin_h1.innerHTML += origin[1];
+        // }, 1000);
+        // setTimeout(function() {
+        //   origin_h1.innerHTML += origin[2];
+        // }, 1500);
+        for(let i = 0; i < origin.length; i++) {
+          setTimeout(function() {
+            // origin_h1.innerHTML += origin[i];
+          }, 500 + (500 * i));
+        }
       });
     </script>
 </body>
