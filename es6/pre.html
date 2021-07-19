@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="hello">안녕</p>
+  <button id="button">버튼</button>
+
+  <script>
+    document.querySelector('#button').addEventListener('click', function() {
+      abc('바보');
+    });
+
+    // var, let, const
+    var name = 'kim';
+    function abc(aaa) {
+      document.getElementById('hello').innerHTML = aaa;
+    }
+
+    // array
+    var arr = ['abc', 'def'];
+    console.log(arr[1]);
+    // object
+    var school = {name : 'kim', age : 29};
+    console.log(school.name);
+
+    // foreach
+    [1,2,3,4].forEach(function(a) {
+      console.log(a);
+    });
+  </script>
+</body>
+</html>
