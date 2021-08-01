@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <button id="btn">버튼</button>
+
+  <script>
+    'use strict'
+
+    // 1. window object
+    console.log(this); // window
+
+    function func() {
+      console.log(this); // window, strict : undefined
+    };
+    func();
+
+    // 2. object 내의 함수 = 메소드
+    var object = {
+      data : 'kim',
+      func : function() {
+        console.log(this); // 메소드가 동작하는 object 출력 {data: "kim", func: f}
+      }
+    }
+    object.func();
+
+    var object2 = {
+      data : {
+        func : function() {
+          console.log(this); // {func: f} 최상위 요소가 아니라 data object
+        }
+      }
+    }
+    object2.data.func();
+
+    // 3. arrow function
+    var object3 = {
+      data : {
+        func : () => {
+          console.log(this); // window 함수 밖에 있던 this 그대로 씀
+        }
+      }
+    }
+    object3.data.func();
+
+    // 4. new function
+    var object4 = {
+      data : {
+        func : () => {
+          console.log(this);
+        }
+      }
+    }
+    object4.data.func();
+
+
+    // 2 - 1 constructor
+    function machine() {
+      this.name = 'kim';
+    }
+    var object5 = new machine();
+    console.log(object5);
+    
+    // 2 - 2 event listener
+    document.getElementById('btn').addEventListener('click', function(e) {
+      console.log(this);
+      // console.log(e.currentTarget);
+    });
+
+
+    // 3 - 1
+    var arr = [1,2,3];
+    arr.forEach(function(a) { // 콜백함수
+      console.log(this);
+    });
+
+    // 3 - 2
+    var object6 = {
+      names : [1,2,3],
+      func : function() {
+        object6.names.forEach(function() {
+          console.log(this);
+        });
+      }
+    }
+    object6.func();
+
+    // 3 - 3
+    var object7 = {
+      names : [1,2,3],
+      func : function() {
+        // console.log(this);
+        object7.names.forEach(() => {
+          console.log(this);
+        });
+      }
+    }
+    object7.func();
+  </script>
+</body>
+</html>
