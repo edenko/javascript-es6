@@ -40,11 +40,11 @@ ES6 문법 코드를 ES5 소스코드로 변환하는 도구. <a href="https://b
 ### 폴리필(polyfill)
 특정 기능이 지원되지 않는 브라우저를 위해 사용할 수 있는 코드 조각 (<a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills#ecmascript" target="_blank">폴리필 목록</a>)
 
+### Reference
+https://github.com/hohoya33/ES6/blob/master/README.md
+
 ## Author
 👤 **HaYoung Ko**
 
 * Github: [@edenko](https://github.com/edenko)
 * email: goodeden3@gmail.com
-
-### Reference
-https://github.com/hohoya33/ES6/blob/master/README.md
