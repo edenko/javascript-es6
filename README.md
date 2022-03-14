@@ -4,8 +4,8 @@
   <img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg"/>
 </p>
 
-This project with ES6 Javascript studt
-* GitHub : 
+This project with ES6 Javascript study
+* GitHub : https://github.com/edenko/javascript-es6
 
 
 # ECMAScript 6 / ES2015
@@ -34,8 +34,7 @@ let, const, Arrow Functions, Classes, Module system, Reflect, Promise, Proxy, Ge
 
 ## ECMAScript 6 지원 현황
 현재 Internet Explorer를 제외한 대부분의 최신 브라우저는 표준을 지원하는 상황
-
-<img src="img/compat-table.png" alt="">
+<!-- <img src="img/compat-table.png" alt=""> -->
 <a href="https://kangax.github.io/compat-table/es6/" target="_blank">ES6기능 지원여부 호환성 표(칸자스)</a>
 
 ## 비호환 엔진에서 ECMAScript 6 사용
