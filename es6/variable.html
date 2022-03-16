@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <button id="btn">버튼</button>
+
+  <script>
+    // Hoisting
+    console.log(age); // undefined
+    var age = 30;
+    console.log(age); // 30
+
+    // 전역변수
+    var phone = '01012345678';
+    window.name = '김'; // better!!!!
+    function func() {
+      console.log(phone);
+      console.log(name);
+    }
+    func();
+
+
+    // # 1
+    // 함수();
+    // function 함수() {
+    //   console.log(안녕);
+    //   let 안녕 = 'Hello!';
+    // } 
+
+    // # 2
+    // 함수();
+    // var 함수 = function() {
+    //   console.log(안녕);
+    //   var 안녕 = 'Hello!';
+    // } 
+
+    // # 3
+    // let a = 1;
+    // var 함수 = function() {
+    //   a = 2;
+    // }
+    // console.log(a);
+
+    // # 4
+    // let a = 1;
+    // var b = 2;
+    // window.a = 3;
+    // window.b = 4;
+    // console.log(a + b);
+
+    // # 5
+    // for (var i = 1; i < 6; i++) { 
+    //   setTimeout(function() { console.log(i); }, i*1000 ); 
+    // }
+    // for (let i = 1; i < 6; i++) { 
+    //   setTimeout(function() { console.log(i); }, i*1000 ); 
+    // }
+  </script>
+</body>
+</html>

@@ -11,21 +11,20 @@
   <button id="btn">버튼</button>
 
   <script>
-    'use strict'
+    // 'use strict'
 
-    // 1. window object
-    console.log(this); // window
-
+    // 1 - 1. window object
+    // console.log(this); // window
     function func() {
-      console.log(this); // window, strict : undefined
+      // console.log(this); // window, strict : undefined
     };
     func();
 
-    // 2. object 내의 함수 = 메소드
+    // 1 - 2. object 내의 함수 = 메소드
     var object = {
       data : 'kim',
       func : function() {
-        console.log(this); // 메소드가 동작하는 object 출력 {data: "kim", func: f}
+        // console.log(this); // 메소드가 동작하는 object 출력 {data: "kim", func: f}
       }
     }
     object.func();
@@ -33,31 +32,32 @@
     var object2 = {
       data : {
         func : function() {
-          console.log(this); // {func: f} 최상위 요소가 아니라 data object
+          // console.log(this); // {func: f} 최상위 요소가 아니라 data object
         }
       }
     }
     object2.data.func();
 
-    // 3. arrow function
+    // 1 - 3. arrow function
     var object3 = {
       data : {
         func : () => {
-          console.log(this); // window 함수 밖에 있던 this 그대로 씀
+          // console.log(this); // window 함수 밖에 있던 this 그대로 씀
         }
       }
     }
     object3.data.func();
 
-    // 4. new function
+    // 1 - 4. new function
     var object4 = {
       data : {
         func : () => {
-          console.log(this);
+          // console.log(this);
         }
       }
     }
     object4.data.func();
+
 
 
     // 2 - 1 constructor
@@ -65,11 +65,11 @@
       this.name = 'kim';
     }
     var object5 = new machine();
-    console.log(object5);
+    // console.log(object5);
     
     // 2 - 2 event listener
     document.getElementById('btn').addEventListener('click', function(e) {
-      console.log(this);
+      // console.log(this);
       // console.log(e.currentTarget);
     });
 
@@ -77,15 +77,16 @@
     // 3 - 1
     var arr = [1,2,3];
     arr.forEach(function(a) { // 콜백함수
-      console.log(this);
+      // console.log(this);
     });
 
     // 3 - 2
     var object6 = {
       names : [1,2,3],
       func : function() {
+        // console.log(this);
         object6.names.forEach(function() {
-          console.log(this);
+          // console.log(this); // 근본 없는 일반 콜백 함수일 뿐...!
         });
       }
     }
@@ -97,7 +98,7 @@
       func : function() {
         // console.log(this);
         object7.names.forEach(() => {
-          console.log(this);
+          // console.log(this);
         });
       }
     }
