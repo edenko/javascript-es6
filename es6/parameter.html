@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // default parameter
+    const func = (a) => {
+      return 3 * a;
+    }
+    const add = (a, b = func(a)) => {
+      console.log(a + b);
+    }
+    // add(1);
+
+
+    // arguments
+    function add2(a, b, c) {  // parameter
+      // console.log(a + b + c); // arguments
+      // console.log(arguments);
+      for(var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+    }
+    // add2(1, 2, 3);
+
+    // rest 파라미터
+    function add3(a, b, ...rest) {
+      // console.log(rest);
+      for(var i = 0; i < rest.length; i++) {
+        console.log(rest[i]);
+      }
+    }
+    // add3(1,2,3,4,5);
+
+
+    // # 1
+    var a = [1,2,3];
+    var b = '김밥';
+    var c = [...b, ...a];
+    // console.log(c);
+
+    // # 2
+    var a = [1,2,3];
+    var b = ['you', 'are'];
+    var c = function(a,b){
+      console.log( [[...a], ...[...b]][1] )
+    }
+    // c(a,b); // you
+
+    // # 3
+    function 함수(a = 5, b = a * 2 ){
+      console.log(a + b);
+      return 10
+    }
+    // 함수(3); // 9
+
+    // # 4
+    function 함수(a = 5, b = a * 2 ){
+      console.log(a + b);
+    }
+    // 함수(undefined, undefined); // 15
+
+    // # 5
+    function arr(...param){
+      return param;
+    }
+    var newArray = arr(1,2,3,4,5);
+    // console.log(newArray); 
+
+    // # 6
+    var numbers = [2,3,4,5,6,1,3,2,5,5,4,6,7];
+    var math = Math.max(...numbers);
+    // console.log(math);
+
+    // # 7
+    function sortt(param){
+      console.log(...[...param].sort());
+    }
+    // sortt('bear'); 
+
+    // # 8
+    function count(param){
+      var result = {};
+      [...param].forEach(function(i) {
+        // console.log(a);
+        if(result[i] > 0) {
+          result[i]++; 
+        }else {
+          result[i] = 1;
+        }
+      })
+      console.log(result);
+    }
+    count('aacbbb');
+  </script>
+</body>
+</html>

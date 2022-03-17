@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <script>
+    var name = `손흥민`;
+    var txt = `안녕하세요 ${name}입니다.`;
+
+    // function txtDivider(a, b) {
+    //   console.log(a);
+    //   console.log(b);
+    //   console.log(a[1] + b + a[0]);
+    // }
+    // txtDivider`안녕하세요 ${name}입니다.`;
+
+    
+    // # 1
+    var pants = 20;
+    var socks = 100;
+    // function txtDivider(a, b, c) {
+    //   console.log(`${a[1]}${b} ${a[0]}${c}`)
+    // }
+    txtDivider`바지${pants} 양말${socks}`
+
+    // # 2
+    function txtDivider(a, b, c) {
+      if(b === 0) {
+        console.log(`바지 다 팔렸어요. ${a[1]}${c}`)
+      }else {
+        console.log(`${a[1]}${b} ${a[0]}${c}`)                
+      }
+    }
+  </script>
+</body>
+</html>
