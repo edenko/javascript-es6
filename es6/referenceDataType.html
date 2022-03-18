@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var txt = 'aaa'; // Primitive data type
+    var arr = [1, 2, 3]; // Reference data type
+
+    var name1 = {name : '김'};
+    var name2 = name1;
+    name1.name = '박';
+    // console.log(name2);
+
+    var func = (obj) => {
+      // obj.name = 'park';
+      // console.log(obj.name);
+      
+      obj = {name: 'park'};
+    }
+    func(name1);
+  </script>
+</body>
+</html>
