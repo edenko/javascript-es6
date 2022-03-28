@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Product(name, price) {
+      this.name = name;
+      this.price = price;
+      this.VAT = () => {
+        console.log(`'${this.name}' 상품의 부가세는 ${this.price * 0.1}원입니다.`);
+      }
+    }
+    var prod1 = new Product('shirt', 50000);
+    var prod2 = new Product('pants', 30000);
+    
+    // prototype
+    Product.prototype.cate = 'top';
+    console.log(prod2.cate); // top
+
+    // 상속했음 -> 내장함수 동작방식도 동일하다!
+    var arr = new Array(1, 2, 3);
+  
+    // __proto__ 활용
+    var parents = {name: 'kim'};
+    var child = {};
+    child.__proto__ = parents;
+
+    // # 1
+    function Student(이름, 나이){
+      this.name = 이름;
+      this.age = 나이;
+      this.sayHi = function(){
+        console.log('안녕 나는 ' + this.name + '이야');
+      }
+    }
+    var 학생1 = new Student('Kim', 20);
+    var 학생2 = new Student('Park', 21);
+    var 학생3 = new Student('Lee', 22);
+
+    // # 2
+    function Parent(){
+      this.name = 'Kim';
+    }
+    var a = new Parent();
+    a.__proto__.name = 'Park';
+    // console.log(a.name)
+
+    // # 3
+    function Student(이름, 나이){
+      this.name = 이름;
+      this.age = 나이;
+    }
+    Student.prototype.sayHi = () => {
+      console.log('안녕 나는 ' + this.name + '이야');
+    }
+    var 학생1 = new Student('Kim', 20);
+    학생1.sayHi();
+
+    // # 4
+    var arr = [1, 2, 3];
+    Array.prototype.remove3 = function(num) {
+      for(var i = 0; i < this.length; i++) {
+        if(this[i] === num) {
+          this.splice(i, 1);
+        }
+      }
+    }
+    arr.remove3(3);
+    console.log(arr);
+  </script>
+</body>
+</html>

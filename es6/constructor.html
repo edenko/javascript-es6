@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var std1 = {name: 'kim', age: 15};
+
+    function Student(name, age) {
+      this.name = name; // this : 새로 생성되는 object
+      this.age = age; // 새로 생성되는 object에 이 값을 부여해주세요
+      this.sayHi = () => {
+        console.log(`안녕하세요. ${this.name}입니다.`)
+      }
+    }
+    var std1 = new Student('kim', 15);
+    var std2 = new Student('park', 20);
+    std1.sayHi();
+
+
+    function Product(name, price) {
+      this.name = name;
+      this.price = price;
+      this.VAT = () => {
+        console.log(`'${this.name}' 상품의 부가세는 ${this.price * 0.1}원입니다.`);
+      }
+    }
+    var prod1 = new Product('shirt', 50000);
+    var prod2 = new Product('pants', 30000);
+    prod1.VAT();
+  </script>
+</body>
+</html>

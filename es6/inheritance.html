@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // es5
+    // var parents = {name: 'Kim', age: 50};
+    // var child = Object.create(parents);
+    // child.age = 20;
+    // var grandchild = Object.create(child);
+
+    // es6
+    class parents {
+      constructor(name) {
+        this.name = name;
+        this.age = 50;
+        // 1) constructor에 추가하든가 -> 자식이 직접 함수를 가짐
+        // this.sayHi = function() {
+        //   console.log(`안녕하세요. ${this.name}입니다.`);
+        // }
+      }
+      // 2) 요기에 추가하면 자식 오브젝트에 추가 안됨, parents.prototype에 추가됨
+      sayHi() {
+        console.log(`hello`);
+      }
+    }
+    parents.prototype.sayHello = function() {
+      // sayHello 함수 추가
+    }
+    var child = new parents('Kim'); 
+  </script>
+</body>
+</html>
