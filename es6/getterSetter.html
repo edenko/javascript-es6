@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var people = {
+      name: 'park',
+      age: 30,
+      get nextAge() {
+        return this.age + 1;
+      },
+      set setAge(age) {
+        this.age = parseInt(age);
+      }
+    }
+    // people.setAge('31');
+    people.setAge = '31';
+    // people.nextAge();
+    people.nextAge;
+
+    class peopleClass {
+      constructor() {
+        this.name = 'kim';
+        this.age = 29;
+      }
+      get nextAge() {
+        return this.age + 1;
+      }
+      set setAge(age) {
+        return this.age = age;
+      }
+    }
+    var people1 = new peopleClass();
+  </script>
+</body>
+</html>

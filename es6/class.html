@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class grandparents {
+      constructor(name) {
+        this.firstName = 'Kim';
+        this.lastName = name;
+      }
+      sayHi() {
+        console.log(`hi! I'm grandparents`);
+      }
+    }
+    var grandparents1 = new grandparents('만덕');
+
+    class parents extends grandparents {
+      constructor(name) {
+        super(name); // 부모의 constructor를 그대로 가져옴
+        this.age = 50;
+      }
+      sayHi() {
+        console.log(`hi! I'm parents`);
+        super.sayHi(); // 부모 prototype.sayHi()
+      }
+    }
+    var parent1 = new parents('동윤');
+  </script>
+</body>
+</html>
