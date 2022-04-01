@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [1, 2, 3];
+    var [a, b, c = 10] = [1, 2];
+
+    var obj = {name: 'kim', age: 30};
+    var {name: first = 'park', age} = {name: 'kim', age: 30};
+
+    var v1 = 'lee';
+    var v2 = 20;
+    var obj1 = {v1: v1, v2: v2}; 
+    var obj2 = {v1, v2}; 
+
+    var obj3 = {name: 'kim', age: 20};
+    function func({name, age}) {
+      console.log(name, age);
+    }
+    func(obj3);
+    function func2([name1, age1]) {
+      console.log(name1, age1);
+    }
+    func2([2,3]);
+  </script>
+</body>
+</html>
