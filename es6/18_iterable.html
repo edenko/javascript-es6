@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // class parent {
+    // }
+    // parent.prototype.name = 'park';
+    // var obj = new parent();
+    var obj = {name: 'kim', age: 20};
+    // Object.getOwnPropertyDescriptor(obj, 'name');
+    var arr = [1, 2, 3];
+
+    // 그냥 기본
+    for(var i = 0; i < 3; i++) {
+      // console.log(i);
+    }
+
+    // array 전용
+    [1, 2, 3].forEach((item, index, arr)=>{
+      // console.log(item);
+    });
+
+    // object 전용
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key)) {
+        // console.log(obj[key]);  
+      };
+    }
+
+    // new, iterable 전용
+    for(var data of arr) {
+      // console.log(data);
+    }
+    for(var data of 'apple') {
+      // console.log(data);
+    }
+    // arr[Symbol.iterator]();
+    // document.getElementsByClassName();
+    // document.querySelectorAll();
+  </script>
+</body>
+</html>

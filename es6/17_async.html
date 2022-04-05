@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">버튼</button>
+  <script>
+    // async function add() {
+    //   return 1 + 1;
+    // }
+    // add().then((result)=>{
+    //   console.log(result);
+    // })
+
+    // async function add() {
+    //   var promise = new Promise((resolve, reject)=>{
+    //     var calc = 1 + 1;
+    //     // resolve(10);
+    //     reject(10);
+    //   });
+    //   try {
+    //     var result = await promise;
+    //     console.log(result);
+    //   } catch {
+    //     console.log('연산 실패');
+    //   }
+    // }
+    // add();
+
+    async function click() {
+      var promise = new Promise((resolve, reject)=>{
+        document.getElementById('btn').addEventListener('click', ()=>{
+          resolve('성공');
+        })
+      });
+      var result = await promise;
+      console.log(result);
+    }
+    click();
+  </script>
+</body>
+</html>
