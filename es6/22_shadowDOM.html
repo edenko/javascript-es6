@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <input type="range" name="" id=""> -->
+  <div id="mordor"></div>
+  <custom-input></custom-input>
+
+  <template id="template1">
+    <style>
+      p { color : red }
+    </style>
+    <p>심연에서 왔도다</p>
+  </template>
+
+  <script>
+    // shadowRoot 열어주는 함수
+    document.querySelector('#mordor').attachShadow({mode: 'open'});
+    // custum elements
+    document.querySelector('#mordor').shadowRoot.innerHTML = '<p>심연에서 왔도다</p>'
+
+    class classInput extends HTMLElement {
+      connectedCallback() {
+        // this : custom-input
+        this.attachShadow({mode: 'open'});
+        // this.shadowRoot.innerHTML = '<p>심연에서 왔도다</p><style>p { color : red }</style>'
+        this.shadowRoot.append(template1.content.cloneNode(true))
+        let el = this.shadowRoot.querySelector('p');
+        el.addEventListener('click', () => {
+          console.log('click');
+        })
+      }
+    }
+    customElements.define('custom-input', classInput);
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>회원가입</h3>
+  <custom-input name="이름"></custom-input>
+  <button>버튼</button>
+
+  <script>
+    class classInput extends HTMLElement {
+      connectedCallback() {
+        // this.innerHTML = `<label>이름을 입력하세요. </label><input>`;
+
+        // 아래 html 생성 속도가 훨씬 빠름
+        let name = this.getAttribute('name');
+        let pLabel = document.createElement('label');
+        let pLabelTxt = document.createTextNode(`${name}을 입력하세요. `);
+        let pInput = document.createElement('input');
+        this.appendChild(pLabel);
+        pLabel.appendChild(pLabelTxt);
+        this.appendChild(pInput);
+        pInput.classList.add('test');
+        // pInput.className = 'test';
+      }
+      static get observedAttributes() {
+        return ['name']
+      }
+      attributeChangedCallback() {
+        console.log(this.getAttribute('name'));
+      }
+    }
+    customElements.define('custom-input', classInput);
+  </script>
+</body>
+</html>
